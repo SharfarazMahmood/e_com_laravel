@@ -18,7 +18,6 @@ use App\Http\Controllers\ProductController;
 */
 
 
-
 Route::get('/login', function () {
     if (session()->has('user')){
         return redirect('/');

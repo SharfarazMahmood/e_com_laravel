@@ -19,12 +19,9 @@ use App\Http\Controllers\ProductController;
 
 
 Route::get('/login', function () {
-    if (session()->has('user')){
-        return redirect('/');
-    }
     return view('login');
 });
 // controller path
 //  ---login GET & POST route
 Route::post('/login', [UserController::class, 'login']);
-Route::get('/', [ProductController::class, 'index']);
+Route::get('/', [ProductController::class, 'allProducts']);

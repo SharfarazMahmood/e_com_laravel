@@ -13,23 +13,15 @@
     </ol>
 
     <!-- Wrapper for slides -->
-    <div class="carousel-inner">
+    <div class="carousel-inner" >
         @foreach($products as $item)
             <div class="item {{$item['id']==1?'active':''}}">
-                <img class='slider-img' src="{{$item['gallery']}}" >
+                <img class='slider-img' src="{{$item['gallery']}}" style="height: 500px">
                 <div class="carousel-caption slider-text">
                     <h3>{{$item['name']}}</h3>
-                    <p></p>
+                    <p> {{$item['discription']}} </p>
                 </div>
             </div>
-
-            <!-- <div class="item">
-            <img src="chicago.jpg" alt="Chicago">
-            </div>
-
-            <div class="item">
-            <img src="ny.jpg" alt="New York">
-            </div> -->
         @endforeach
     </div>
 

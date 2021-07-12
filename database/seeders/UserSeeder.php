@@ -6,7 +6,7 @@ use Illuminate\Database\Seeder;
 
 //  import the database for seeding
 use Illuminate\Support\Facades\DB;
-// import Has for encrypting passwords
+// import Hash for encrypting passwords
 use Illuminate\Support\Facades\Hash;
 
 

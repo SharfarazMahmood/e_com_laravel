@@ -27,10 +27,18 @@ class UserSeeder extends Seeder
         //     'password'=>Hash::make('123')
         // ]);
         DB::table('users')->insert([
-            'first_name'=>'ja',
-            'last_name'=>'mee',
-            'email'=>'jamee@gmail.com',
-            'password'=>Hash::make('123')
+            [
+                'first_name'=>'sharfaraz',
+                'last_name'=>'mahmood',
+                'email'=>'sharfarazmahmood@gmail.com',
+                'password'=>Hash::make('123')
+            ],
+            [
+                'first_name'=>'ja',
+                'last_name'=>'mee',
+                'email'=>'jamee@gmail.com',
+                'password'=>Hash::make('123')
+            ]
         ]);
     }
 }

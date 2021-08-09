@@ -25,6 +25,17 @@
     </body>
 
     <style>
+        .search-box{
+            width: 500px !important;
+        }
+        hr.style3 {
+            border: 0; 
+            height: 1px; 
+            background-image: -webkit-linear-gradient(left, #f0f0f0, #8c8b8b, #f0f0f0);
+            background-image: -moz-linear-gradient(left, #f0f0f0, #8c8b8b, #f0f0f0);
+            background-image: -ms-linear-gradient(left, #f0f0f0, #8c8b8b, #f0f0f0);
+            background-image: -o-linear-gradient(left, #f0f0f0, #8c8b8b, #f0f0f0); 
+        }
         .custome-login{
             height: 500px;
             padding-top: 100px;
@@ -39,5 +50,19 @@
             background-color: #3544355;
             color: #000000 !important;
         }
+        .trending-wraper{
+            margin: 30px;
+        }
+        .trending-image{
+            height: 100px;
+        }
+        .trending-item{
+            float: left;
+            width: 20%;
+        }
+        .productDetails-img{
+             height: 300px;
+        }
+        
     </style>
 </html>

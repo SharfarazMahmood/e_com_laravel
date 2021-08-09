@@ -1,4 +1,4 @@
-<div class="row">
+<div style="clear: both" class="row">
     <br>
 </div>
 <div class="panel panel-default">

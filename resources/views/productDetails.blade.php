@@ -6,7 +6,7 @@
         
     <div class="row">
         <div class="col-sm-6">
-            <img class="productDetails-img" src="{{$item['gallery']}}" alt="">
+            <img class="productDetails-img" src="{{$item['gallery']}}" alt="not image found">
         </div>
         <div class="col-sm-6">
             <a href="/">Go Back</a>
@@ -18,7 +18,8 @@
             
             <form action="/add_To_Cart" method="POST">
                 @csrf
-                Quantity: <input name="ammount" value="1" min="1" class="select-input" type="number">
+                {{-- Quantity:  --}}
+                <input type="hidden" name="ammount" value="1" min="1" class="select-input" type="number">
                 <br>
                 <input type="hidden" name="product_id" value="{{$item['id']}}">
 

@@ -48,7 +48,7 @@
             height:400px !important ; 
         }
         .custom-product{
-            height: 600px;
+            height: 400px;
         }
         .slider-text{
             background-color: #3544355;
@@ -67,7 +67,8 @@
 
 
         .productDetails-img{
-             height: 300px;
+             height: 500px;
+             float: right;
         }
         
 
@@ -75,5 +76,6 @@
             width: 108px; 
             margin-bottom: 8px;
         }
+        
     </style>
 </html>

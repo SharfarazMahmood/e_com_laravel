@@ -36,10 +36,14 @@
             background-image: -ms-linear-gradient(left, #f0f0f0, #8c8b8b, #f0f0f0);
             background-image: -o-linear-gradient(left, #f0f0f0, #8c8b8b, #f0f0f0); 
         }
+
+
         .custome-login{
             height: 500px;
             padding-top: 100px;
-        };
+        }
+
+
         img.slider-img{
             height:400px !important ; 
         }
@@ -60,9 +64,16 @@
             float: left;
             width: 20%;
         }
+
+
         .productDetails-img{
              height: 300px;
         }
         
+
+        .select-input {
+            width: 108px; 
+            margin-bottom: 8px;
+        }
     </style>
 </html>

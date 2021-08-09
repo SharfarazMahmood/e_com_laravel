@@ -1,4 +1,11 @@
-<nav class="navbar navbar-default">
+<?php
+use App\Http\Controllers\ProductController;
+$totalItem = 0;
+if (Session::has('user') ){
+  $totalItem = ProductController::cartItems();
+}
+?>
+<nav class="navbar navbar-inverse">
   <div class="container-fluid">
     <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
@@ -23,18 +30,23 @@
         </div>
         <button type="submit" class="btn btn-default">Search</button>
       </form>
+
       <ul class="nav navbar-nav navbar-right">
-      <li ><a href="#">Cart(0) </a></li>
-        <!-- <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
-          <ul class="dropdown-menu">
-            <li><a href="#">Action</a></li>
-            <li><a href="#">Another action</a></li>
-            <li><a href="#">Something else here</a></li>
-            <li role="separator" class="divider"></li>
-            <li><a href="#">Separated link</a></li>
-          </ul>
-        </li> -->
+        @if(Session::has('user'))
+          <li ><a href="#">Cart({{$totalItem}}) </a></li>
+          <li class="dropdown">
+            <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                                {{Session::get('user')['first_name']}} {{Session::get('user')['last_name']}}
+            <span class="caret"></span></a>
+            <ul class="dropdown-menu">
+              <li><a href="/logout">Logout</a></li>
+              {{-- <li><a href="#">Page 1-2</a></li>
+              <li><a href="#">Page 1-3</a></li> --}}
+            </ul>
+          </li>
+        @else
+          <li ><a href="/login">Login </a></li>
+        @endif 
       </ul>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->

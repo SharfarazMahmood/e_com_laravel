@@ -4,8 +4,10 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Session;
 // import models for getting database data
 use App\Models\User;
+
 
 class UserController extends Controller
 {
@@ -23,5 +25,11 @@ class UserController extends Controller
             // return $user;
             return redirect('/');
         }
+    }
+
+    function logout(Request $request){
+        Auth::logout();
+        Session::flush();
+        return redirect('/login');
     }
 }

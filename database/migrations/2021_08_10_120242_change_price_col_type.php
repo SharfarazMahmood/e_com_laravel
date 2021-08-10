@@ -16,7 +16,7 @@ class ChangePriceColType extends Migration
         // Schema::table('products', function (Blueprint $table) {
         //     $table->float('price', 'float')->change();
         // });
-        DB::statement('ALTER TABLE products ALTER price TYPE DOUBLE PRECISION USING (price::double precision');
+        DB::statement('ALTER TABLE products ALTER price TYPE DOUBLE PRECISION USING price::double precision');
     }
 
     /**

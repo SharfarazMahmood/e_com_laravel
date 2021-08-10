@@ -14,7 +14,7 @@ class ChangePriceColType extends Migration
     public function up()
     {
         Schema::table('products', function (Blueprint $table) {
-            $table->string('price', 'float')->change();
+            $table->float('price', 'float')->change();
         });
     }
 

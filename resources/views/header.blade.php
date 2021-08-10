@@ -5,6 +5,7 @@ if (Session::has('user') ){
   $totalItem = ProductController::cartItems();
 }
 ?>
+
 <nav class="navbar navbar-inverse">
   <div class="container-fluid">
     <!-- Brand and toggle get grouped for better mobile display -->
@@ -21,9 +22,18 @@ if (Session::has('user') ){
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
-      <li class="active" ><a href="/">Home </a></li>
-      <li ><a href="#">Orders </a></li>
+        <li class="active" ><a href="/">Home </a></li>
+        <li >
+          @if(Session::has('user'))
+          <li ><a href="/orderList">Orders </a>
+            
+          </li>
+        @else
+          <li ><a href="/login">Orders </a></li>
+        @endif 
+        </li>
       </ul>
+
       <form action="/search" class="navbar-form navbar-left">
         <div class="form-group">
           <input type="text" name="searchQuery" class="form-control search-box" placeholder="Search">
@@ -46,8 +56,10 @@ if (Session::has('user') ){
           </li>
         @else
           <li ><a href="/login">Login </a></li>
+          <li ><a href="/register">Register </a></li>
         @endif 
       </ul>
+
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
 </nav>

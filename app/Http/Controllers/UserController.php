@@ -32,4 +32,27 @@ class UserController extends Controller
         Session::flush();
         return redirect('/login');
     }
+
+    function register( Request $request ){
+        // return $request->input();
+        $user =  new User;
+        $user->first_name = $request->first_name;
+        $user->last_name = $request->last_name;
+        $user->email = $request->email;
+        $user->password = Hash::make($request->password);
+        $user->save();
+
+        return redirect('/login');
+
+        
+        // if( !$user || !Hash::check($request->password, $user->password) ){
+        //     return "Incorrect Email and/or Password ";
+        // }else{
+        //     $request->session()->put('user', $user);
+        //     // session()->save();
+        //     // echo session('user');
+        //     // return $user;
+        //     return redirect('/');
+        // }
+    }
 }

@@ -84,6 +84,7 @@ class ProductController extends Controller
         
         return view('orderNow', ['totalCost'=>$totalCost]);
     }
+
     function orderPlaced(Request $request){
         $request->validate([
             'address'=>'required',
@@ -105,6 +106,22 @@ class ProductController extends Controller
         }
 
         return redirect('/');
+    }
+
+    function orderList(Request $request){ 
+        if ($request->session()->has('user')){
+            $user_id = Session::get('user')['id'];
+             $orders = DB::table('orders')
+                            ->join('products', 'orders.product_id', '=', 'products.id' )
+                            ->where("orders.user_id", $user_id)
+                            ->get();
+                            // ->sum('products.price');
+
+            return view('ordersList', ['orders'=>$orders]);
+        }
+        else{
+            return "done";
+        }
     }
 
 }

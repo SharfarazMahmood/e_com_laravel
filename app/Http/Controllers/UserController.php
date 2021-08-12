@@ -17,7 +17,11 @@ class UserController extends Controller
         $user =  User::where(['email'=>$request->email])->first();
         
         if( !$user || !Hash::check($request->password, $user->password) ){
-            return "Incorrect Email and/or Password ";
+
+            $errors = [];
+            $errors["loginErrors"] = "Incorrect Email and/or Password";
+            return view('/login', ['errors'=>$errors]);
+            // return "Incorrect Email and/or Password ";
         }else{
             $request->session()->put('user', $user);
             // session()->save();

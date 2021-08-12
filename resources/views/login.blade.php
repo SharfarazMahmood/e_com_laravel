@@ -12,7 +12,16 @@
     </div>
     <div class="col-sm-6  jumbotron" style="padding:10px;">
         <form action='login' method='POST'>
-                	    @csrf
+            <div class="alert alert-danger" role="alert">
+                @if($errors)         
+                     @foreach ($errors as $item)
+                         <li>{{$item}}</li>
+                     @endforeach    
+                @else
+                    {{-- <td>{{ $user->status }}</td>         --}}
+                @endif
+            </div>
+            @csrf
             <div class="form-group ">
                 <label for="email">Email address</label>
                 <input type="email" name="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="Enter email">
